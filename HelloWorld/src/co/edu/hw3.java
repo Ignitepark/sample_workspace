@@ -2,7 +2,7 @@ package co.edu;
 
 import java.util.Scanner;
 
-public class Example08 {
+public class hw3 {
 public static void main(String[] args) {
 	System.out.println("[필수 정보 입력]");
 	System.out.print("1. 이름 : ");

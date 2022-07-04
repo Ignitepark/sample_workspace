@@ -1,6 +1,6 @@
 package co.edu;
 
-public class Example06 {
+public class hw1 {
 	public static void main(String[] args) {
 		
 	String name = "감자바";
