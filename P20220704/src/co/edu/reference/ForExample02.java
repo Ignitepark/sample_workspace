@@ -22,7 +22,5 @@ public class ForExample02 {
 		for (int num : intArray)
 			System.out.print(num + " ");
 		System.out.println("합 : " + sumAry(intArray));
-
 	}
-
 }

@@ -38,4 +38,5 @@ public class ArrayExample02 {
 //			System.out.println(intAry[j]);
 //		}
 	}
+
 }

@@ -46,7 +46,7 @@ public class star {
 		}
 		System.out.println();
 		System.out.println();
-		int b = 15;
+		int b = 40;
 		int c = 3;
 		for (int i = 1; i <= b; i += c) {
 			for (int j = b - i; j >= 0; j--) {
