@@ -3,7 +3,7 @@ package co.edu;
 public class SortingMethod {
 	public static void main(String[] args) {
 
-		int[] intArray = new int[10];
+		int[] intArray = new int[20];
 		for (int i = 0; i < intArray.length; i++) {
 			intArray[i] = (int) (Math.random() * 100) + 1;
 		}
@@ -15,7 +15,7 @@ public class SortingMethod {
 		for (int num : intArray)
 			System.out.print(num + " ");
 		System.out.println();
-		upsort(intArray);
+		sort(intArray);
 		System.out.print("오름차순 : ");
 		for (int num : intArray)
 			System.out.print(num + " ");
@@ -64,4 +64,19 @@ public class SortingMethod {
 		}
 		return 0;
 	}
+
+	public static int sort(int[] Array) {
+		int temp = 0;
+		for (int i = 0; i < Array.length; i++) {
+			for (int j = 0; j < Array.length - 1; j++) {
+				if (Array[j] > Array[j + 1]) {
+					temp = Array[j + 1];
+					Array[j + 1] = Array[j];
+					Array[j] = temp;
+				}
+			}
+		}
+		return 0;
+	}
+
 }
