@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class EmployeeListApp {
 	public static void main(String[] args) {
 
-		EmployeeList app = EmployeeArray.getInstance();
+//		EmployeeList app = EmployeeArray.getInstance();
+		EmployeeArrayList app = EmployeeArrayList.getInstance();
 
 		Scanner scn = new Scanner(System.in);
 
@@ -20,7 +21,7 @@ public class EmployeeListApp {
 				app.input();
 			} else if (selectNo == 3) {
 				app.printList();
-			} else if (selectNo == 5) {
+			} else if (selectNo == 4) {
 				System.out.println("검색할 사번을 입력하시오> ");
 				int empId = Integer.parseInt(scn.nextLine());
 				Employee emp = app.search(empId);
