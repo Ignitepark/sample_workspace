@@ -25,7 +25,7 @@ public class ManageMent {
 			} else if (menuNo == 3) {
 				as.money();
 			} else if (menuNo == 4) {
-
+				as.transfer();
 			} else if (menuNo == 5) {
 				as.deleteAccount();
 			} else if (menuNo == 6) {

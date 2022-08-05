@@ -67,6 +67,8 @@ public class AccountService {
 		System.out.print("금액 > ");
 		int money = Integer.parseInt(scn.nextLine());
 
+		AccountManage.getInstance().transferMoney(account2, account1, money);
+
 	}
 
 }

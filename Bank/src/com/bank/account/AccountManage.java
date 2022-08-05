@@ -86,7 +86,49 @@ public class AccountManage extends DAO {
 		}
 		return result;
 	}
-	//이체
-	
-	
+
+	// 이체
+	public void transferMoney(String toAccount, String fromAccount, int balance) {
+		int result = 0;
+		try {
+			conn();
+			String sql = "select balance from account where account_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, fromAccount);
+			rs = pstmt.executeQuery();
+
+			int fromBalance = rs.getInt("balance");
+			if (fromBalance < balance) {
+				System.out.println("잔고가 부족합니다");
+				return;
+			}
+
+			String sql2 = "update account set balance = balance - ? where account_id = ?";
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setInt(1, balance);
+			pstmt.setString(2, fromAccount);
+
+			result = pstmt.executeUpdate();
+			if (result == 1) {
+				System.out.println("정상 출금");
+				String sql1 = "update account set balance = balance + ? where account_id = ?";
+				pstmt = conn.prepareStatement(sql1);
+				pstmt.setInt(1, balance);
+				pstmt.setString(2, toAccount);
+				int result2 = pstmt.executeUpdate();
+				if (result2 == 1) {
+					System.out.println("이체 완료");
+				} else {
+					System.out.println("이체 실패");
+				}
+			} else {
+				System.out.println("출금 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+	}
+
 }
